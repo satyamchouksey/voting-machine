@@ -51,6 +51,11 @@
   background-color: rgb(221, 214, 214);
   border: 2px solid black;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: center;
+  position: relative;
+  text-align: center;
 }
 .bar {
   background-color: green;

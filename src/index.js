@@ -38,7 +38,11 @@ barContainer.forEach((bar, index) => {
   bar.addEventListener("click", () => {
     const contestantName = index === 0 ? contestant1 : contestant2;
     contestantName.updateVotes();
-    bar1.style.width = `${results.calculateBar1Share()}%`;
-    bar2.style.width = `${results.calculateBar2Share()}%`;
+    const voteShareBar1 = `${results.calculateBar1Share().toFixed(1)}%`;
+    const voteShareBar2 = `${results.calculateBar2Share().toFixed(1)}%`;
+    bar1.textContent = voteShareBar1;
+    bar2.textContent = voteShareBar2;
+    bar1.style.width = voteShareBar1;
+    bar2.style.width = voteShareBar2;
   });
 });
