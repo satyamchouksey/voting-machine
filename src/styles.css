@@ -63,3 +63,8 @@
   width: 0px;
   transition: width 0.89s ease-in;
 }
+#final-result {
+  text-transform: capitalize;
+  font-size: large;
+  margin-left: 60px;
+}

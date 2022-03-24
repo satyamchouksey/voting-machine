@@ -30,9 +30,14 @@ const bar1 = document.getElementById("bar1");
 const bar2 = document.getElementById("bar2");
 const barContainer = document.querySelectorAll(".bar-container");
 
-var contestant1 = new contestant("Trump");
-var contestant2 = new contestant("Biden");
-var results = new voting(contestant1, contestant2);
+const contestant1 = new contestant(
+  document.getElementById("name1").textContent
+);
+const contestant2 = new contestant(
+  document.getElementById("name2").textContent
+);
+const results = new voting(contestant1, contestant2);
+const finalResult = document.getElementById("final-result");
 
 barContainer.forEach((bar, index) => {
   bar.addEventListener("click", () => {
@@ -44,5 +49,10 @@ barContainer.forEach((bar, index) => {
     bar2.textContent = voteShareBar2;
     bar1.style.width = voteShareBar1;
     bar2.style.width = voteShareBar2;
+    finalResult.textContent = `Current Winner is ${
+      results?.calculateBar1Share() > results?.calculateBar2Share()
+        ? contestant1.name
+        : contestant2.name
+    }`;
   });
 });
